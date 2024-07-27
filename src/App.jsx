@@ -16,7 +16,7 @@ function App() {
 
   const fetchAPI = async () => {
     const response = await axios
-      .get("http://juan1994.pythonanywhere.com/api/task-list")
+      .get("https://juan1994.pythonanywhere.com/api/task-list")
       .then((response) => {
         setTasks(response.data.filter((t) => t.completed !== true));
         settasksCompleted(response.data.filter((t) => t.completed === true));
@@ -33,7 +33,7 @@ function App() {
     if (newTask) {
       let add = { title: newTask, completed: false };
       axios
-        .post("http://juan1994.pythonanywhere.com//api/task-create", add)
+        .post("https://juan1994.pythonanywhere.com//api/task-create", add)
         .then((response) => {
           if (response.status == 201) {
             add = response.data;
@@ -58,7 +58,7 @@ function App() {
     console.log("wtf");
     if (confirm("Realmente deseas eliminar esta tarea?") == true) {
       axios
-        .delete(`http://juan1994.pythonanywhere.com//api/task-detail/${id}`)
+        .delete(`https://juan1994.pythonanywhere.com//api/task-detail/${id}`)
         .then((response) => {
           if(type===1) {
             setTasks(tasks.filter((t) => t.id !== id));
@@ -78,7 +78,7 @@ function App() {
     if (confirm(`Completar tarea ${task.id}`) == true) {
       let update = { title: task.title, completed: true };
       axios
-        .put(`http://juan1994.pythonanywhere.com//api/task-detail/${task.id}`, update)
+        .put(`https://juan1994.pythonanywhere.com//api/task-detail/${task.id}`, update)
         .then((response) => {
           setTasks(tasks.filter((t) => t.id !== task.id));
           task.completed = true;
