@@ -158,12 +158,15 @@
 }
 
 @media (max-width: 530px) {
+  body {
+    position: relative;
+  }
   .container {
+    position: absolute;
     top: 0;
     left: 0;
-    transform: translate(0, 0);
-    margin: 15px 15px;
-    min-width: 200px;
+    transform: translate(0,0);
+    border: none;
   }
 
   .new-task form{
