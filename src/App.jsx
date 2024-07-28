@@ -128,7 +128,7 @@ function App() {
                   return (
                     <CSSTransition
                       key={index}
-                      timeout={700}
+                      timeout={300}
                       classNames="item"
                       className="task-item"
                     >
@@ -167,7 +167,7 @@ function App() {
                   return (
                     <CSSTransition
                       key={index}
-                      timeout={700}
+                      timeout={300}
                       classNames="item"
                       className="task-item"
                     >

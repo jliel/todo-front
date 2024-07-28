@@ -107,7 +107,7 @@
 .item-exit-active {
   opacity: 0;
   transform: translateX(20%);
-  transition: opacity 700ms ease-out, transform 700ms ease-in-out;
+  transition: opacity 300ms ease-out, transform 300ms ease-in-out;
 }
 
 .item-enter {
@@ -115,7 +115,7 @@
 }
 .item-enter-active {
   opacity: 1;
-  transition: opacity 700ms ease-in;
+  transition: opacity 300ms ease-in;
 }
 
 #task-completed button {
@@ -155,5 +155,35 @@
 
 .tab-page.active {
   display: block;
+}
+
+@media (max-width: 530px) {
+  .container {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    margin: 15px 15px;
+    min-width: 200px;
+  }
+
+  .new-task form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .new-task form button {
+    width: 100%;
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
 }
 
